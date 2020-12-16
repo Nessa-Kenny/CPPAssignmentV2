@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+.centerheader{
+	text-align:center;
+	font-size:300%
+	color:blue;
+	}
+</style>
+</head>
+
+<body style="background-color:powderblue;">
+<!body>
+<h1 class="centerheader">Recipe Journal - Login page <br><br>
+<!--Image>
+<!--<img src="login_img.jpg" alt="LoginImage" width="150" height="150">
+-->
+<img src="images/login_img.jpg" alt="LoginImage" style="width:150px;height:150px;">
+</h1>
+<h2>Please log in or register</h2>
+
+<p><b>Login</b></p>
+<form action="/login_page.py">
+  <label for="uname">Username:</label><br>
+  <input type="text" id="uname" name="uname" value=""><br>
+  <label for="pwd">Password:</label><br>
+  <input type="text" id="pwd" name="pwd" value=""><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<br>
+<br>
+<br>
+<p><b>Register details</b><p>
+<form action="/register_page.py">
+  <label for="r_uname">Username:</label><br>
+  <input type="text" id="r_uname" name="runame" value=""><br>
+  <label for="r_pwd">Password:</label><br>
+  <input type="text" id="r_pwd" name="r_pwd" value=""><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+/*Please choose a storng password.
+    Your password must contain at least 8 characters.
+    Your password can't be a commonly used password.
+    Your password can't be entirely numeric./*
+</body>
+</html>

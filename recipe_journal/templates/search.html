@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.centerheader{
+	text-align:center;
+	font-size:300%
+	color:blue;
+	}
+</style>
+</head>
+
+<body style="background-color:powderblue;">
+<!body>
+<h1 class="centerheader">Recipe Journal - Search <br><br>
+<img src="images/search_img.jpg" alt="SearchImage" style="width:150px;height:150px;">
+</h1>
+<h2>Search for Recipe</h2>
+<p>Please enter search details</p>
+<form action="/search_recipe_page.py">
+  <label for="r_title">Recipe Title:</label><br>
+  <input type="text" id="r_title" name="r_title" value=""><br><br>
+   
+  <label for="r_ing">Ingredients:</label> <br>
+  <input type="text" id="r_ing" name="r_ing" value=""><br><br>
+   
+  <label for="r_key">Keywords:</label><br>
+  <input type="text" id="r_key" name="r_key" value=""><br><br>
+    
+  <input type="submit" value="Search for Recipe">
+</form> 
+
+</body>
+</html>
