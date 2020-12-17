@@ -19,8 +19,8 @@
         </h1>
         <h2> {{ msg }}</h2>
         <div>
-              <h3>Files</h3>
-              <h4>Upload your file here:</h4>
+              <h3>File Upload</h3>
+              <h4>Please upload your file here:</h4>
                   <form method="POST" action="/upload" enctype=multipart/form-data>
                     <input type=file name=file>
                     <input type=submit value=Upload>
@@ -29,16 +29,19 @@
 
         <div>
           <h5>These are your uploaded files:</h5>
-          <p>Click on the filename to download it.</p>
           <ul>
             {% for item in contents %}
               <li>
-                <a href="/download/{{ item.Key }}"> {{ item.Key }} </a> 
-                <!--<img src="https://<nkrecipe1234>.s3.amazonaws.com/{{ item.Key }} "></a>
+                <!--<a href="/download/{{ item.Key }}"> {{ item.Key }} </a> 
                 -->
+                <a href="/download/{{ item.Key }}"> {{ item.Key }}
+                <img src="https://nkrecipe1234.s3.amazonaws.com/{{ item.Key }} "></a>
               </li>
             {% endfor %}
           </ul>
+          <p>File Download - Click on one of the filenames above to download it.</p>
+          
+          <p> File Delete<p>
         </div>
     </div>
 </body>

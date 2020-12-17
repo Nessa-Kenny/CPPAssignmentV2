@@ -24,7 +24,6 @@ def index():
     contents = list_files("nkrecipe1234")
     return render_template('index.html', contents=contents)
 
-
 @app.route("/upload", methods=['POST'])
 def upload():
     if request.method == "POST":
