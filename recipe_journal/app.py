@@ -15,6 +15,9 @@ BUCKET = "nkrecipe1234"
 def entry_point():
     return 'My Recipe Journal!'
 
+@app.route("/indexpage")
+def indexpage():
+    return render_template('indexpage.html')
 
 @app.route("/index")
 def index():

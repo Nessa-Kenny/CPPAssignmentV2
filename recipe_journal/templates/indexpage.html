@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+ <title>Recipe Journal</title>
+<style>
+.centerheader{
+	text-align:center;
+	font-size:300%
+	color:blue;
+	}
+</style>
+</head>
+
+<body style="background-color:powderblue;">
+<meta charset="utf-8">
+   <title>Index</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}">
+ </head>
+ <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Index page</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('index') }}">Index</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+            <li><a href="{{ url_for('search') }}">Search for Recipe</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+ </body>
+</html>
