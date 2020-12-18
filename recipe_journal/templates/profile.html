@@ -12,9 +12,15 @@
 </head>
 
 <body style="background-color:powderblue;">
-<!body>
+<ul class="menu">
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('index') }}">Index</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+            <li><a href="{{ url_for('search') }}">Search for Recipe</a></li>
+</ul>
 <h1 class="centerheader">Recipe Journal - Profile page <br><br>
-<img src="images/profile_img.jpg" alt="ProfileImage" style="width:150px;height:150px;">
+<!--<img src="images/profile_img.jpg" alt="ProfileImage" style="width:150px;height:150px;">-->
 </h1>
 <h2>Profile</h2>
 <p>User Details</p>
@@ -26,21 +32,21 @@
   <input type="submit" value="Update User Details">
 </form> 
 
-<h2><p><b>Added Recipes - These are your uploaded files:</b></p></h2>
-<div class="content">
-  <h2> {{ msg }}</h2>
+<h2><a href="{{ url_for('add_recipe') }}">Add New Recipe</a></h2>
+
+<h2><p><b>Previously added recipes - These are your uploaded files:</b></p></h2>
+<div class="content"></div>
   <ul>
     {% for item in contents %}
-    <a href="/download/{{ item.Key }}"> {{ item.Key }}
-    {% endfor %}
+    <li>
+      <a href="/download/{{ item.Key }}"> {{ item.Key }}
+      <img src="https://nkrecipe1234.s3.amazonaws.com/{{ item.Key }} " width="150" height="150"></a>
+      </li>
+      {% endfor %}
   </ul>
-</div>
-  <b>test</b>
-<br>
+  <h4><p>File Download - Click on one of the filenames above to download it.</p></h4>
 <br>
 <br>
 <h3><p><b>Search Recipes</b><p></h3>
-
-
 </body>
 </html>

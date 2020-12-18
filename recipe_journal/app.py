@@ -7,12 +7,16 @@ from flask import Flask, render_template, request, redirect, send_file, url_for
 #import upload,download data from s3_files.py file
 from s3_files import list_files, download_file, upload_file
 
+#bootstrap
+from flask_bootstrap import Bootstrap
+
 
 app = Flask(__name__)
 UPLOAD_FOLDER = "uploads"
 DOWNLOAD_FOLDER = "downloads"
 #existing bucket in s3
 BUCKET = "nkrecipe1234"
+bootstrap = Bootstrap(app)
 
 @app.route('/')
 def entry_point():
@@ -53,7 +57,8 @@ def login():
 #profile page
 @app.route("/profile")
 def profile():
-    return render_template('profile.html')
+    contents = list_files("nkrecipe1234")
+    return render_template('profile.html', contents=contents)
 
 #search_recipe page
 @app.route("/search")
@@ -85,10 +90,14 @@ def upload1():
 def add_rec():
     title = request.form['r_title']
     tit = title + '.html'
-    fh = open (title,  "w")
+    full_path = os.path.join('/recipe_journal/uploads',tit)
+    fh = open (tit,  "w")
     #fh = open (title.strftime("%d %B %Y")+".html","w")
     
     ing = request.form['r_ing']
+    #fh.write('<html><head><link rel="stylesheet" href="/static/css/rep_styles.css"></head><body class="testbg"><div class="test"><h1 class="centerheader">')
+    #fh.write(ing+'</h1>')
+    
     fh.write('Ingredients: \n\n')
     fh.write(ing + '\n\n\n')
     
@@ -104,8 +113,13 @@ def add_rec():
     fh.write('Keywords: \n\n')
     fh.write(kw)
     
+    #img_file = request.form['r_imgfile']
+    #fh.write('Image: \n\n')
+    #fh.write({{ item.Key }})
+     
     fh.close()
-    upload_file(title, BUCKET)
+    #upload_file(title, BUCKET)
+    upload_file(tit, BUCKET)
     return redirect("/index")    
         
 if __name__ == '__main__':

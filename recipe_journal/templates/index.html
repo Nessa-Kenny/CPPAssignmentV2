@@ -15,7 +15,7 @@
 <!body>
     <div class="content">
         <h1 class="centerheader">Recipe Journal - Index page <br><br>
-        <img src="images/files_img.jpg" alt="FilesImage" style="width:150px;height:150px;">
+        <!--<img src="images/files_img.jpg" alt="FilesImage" style="width:150px;height:150px;">-->
         </h1>
         <h2> {{ msg }}</h2>
         <div>
@@ -35,7 +35,7 @@
                 <!--<a href="/download/{{ item.Key }}"> {{ item.Key }} </a> 
                 -->
                 <a href="/download/{{ item.Key }}"> {{ item.Key }}
-                <img src="https://nkrecipe1234.s3.amazonaws.com/{{ item.Key }} "></a>
+                <img src="https://nkrecipe1234.s3.amazonaws.com/{{ item.Key }} " width="150" height="150"></a>
               </li>
             {% endfor %}
           </ul>

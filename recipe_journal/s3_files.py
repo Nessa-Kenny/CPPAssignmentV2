@@ -1,5 +1,21 @@
 import boto3
 
+#def delete_file(file_name, bucket):
+#    """
+#    Function to delete a file from an S3 bucket
+#    """
+#    s3 = boto3.resource('s3')
+#    s3.Object('your-bucket', 'your-key').delete()
+#    deletion = []
+#   try:
+#        for item in s3.list_objects(Bucket=bucket)['Deletion']:
+#            print(item)
+#            contents.delete(item)
+#    except Exception as e:
+#        pass
+#    return deletion
+
+
 
 def upload_file(file_name, bucket):
     """

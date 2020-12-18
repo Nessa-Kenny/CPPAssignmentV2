@@ -12,8 +12,15 @@
 
 <body style="background-color:powderblue;">
 <!body>
+<ul class="menu">
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('index') }}">Index</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+            <li><a href="{{ url_for('search') }}">Search for Recipe</a></li>
+</ul>
 <h1 class="centerheader">Recipe Journal - Search <br><br>
-<img src="images/search_img.jpg" alt="SearchImage" style="width:150px;height:150px;">
+<!--<img src="images/search_img.jpg" alt="SearchImage" style="width:150px;height:150px;">-->
 </h1>
 <h2>Search for Recipe</h2>
 <p>Please enter search details</p>

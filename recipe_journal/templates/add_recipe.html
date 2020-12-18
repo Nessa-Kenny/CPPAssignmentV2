@@ -2,24 +2,31 @@
 <html>
 
 <head>
-<style>
-.centerheader{
-	text-align:center;
-	font-size:300%
-	color:blue;
-	}
-</style>
+<link rel="stylesheet" href="/static/css/rep_styles.css"> 
 </head>
 
-<body style="background-color:powderblue;">
+<!--<body style="background-color:powderblue;">-->
+<body class="testbg">
 <!body>
+<ul class="menu">
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('index') }}">Index</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+            <li><a href="{{ url_for('search') }}">Search for Recipe</a></li>
+</ul>
 <h1 class="centerheader">Recipe Journal - Add Recipe <br><br>
-<img src="images/recipe_img.jpg" alt="RecipeImage" style="width:150px;height:150px;">
 </h1>
 <h2>Add New Recipe</h2>
-<p>Please add recipe details</p>
 
-<!--<form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">-->
+<h3>File Upload - Please upload your recipe file here:</h3>
+                  <form method="POST" action="/upload" enctype=multipart/form-data>
+                    <input type=file name=file>
+                    <input type=submit value=Upload>
+                  </form>
+<br>
+<br>
+<h3>Manual Add - Please add recipe details</h3>
 <form method=POST enctype=multipart/form-data action="/add_rec">
   <label for="r_title">Recipe Title:</label><br>
   <input type="text" id="r_title" name="r_title" value=""><br><br>
