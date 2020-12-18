@@ -1,5 +1,8 @@
 import os
 
+# importing datetime module 
+import datetime 
+
 from flask import Flask, render_template, request, redirect, send_file, url_for
 #import upload,download data from s3_files.py file
 from s3_files import list_files, download_file, upload_file
@@ -76,12 +79,14 @@ def upload1():
     upload_file("test.txt", BUCKET)
     return redirect("/index")
     
-#add recipe - read in form and create text file   
+#add recipe - read in form and create text file
+# %d - date, %B - month, %Y - Year 
 @app.route("/add_rec", methods=['POST'])
 def add_rec():
     title = request.form['r_title']
     tit = title + '.html'
     fh = open (title,  "w")
+    #fh = open (title.strftime("%d %B %Y")+".html","w")
     
     ing = request.form['r_ing']
     fh.write('Ingredients: \n\n')
