@@ -1,0 +1,6 @@
+README.md
+setup.py
+createf_example_pkg3.egg-info/PKG-INFO
+createf_example_pkg3.egg-info/SOURCES.txt
+createf_example_pkg3.egg-info/dependency_links.txt
+createf_example_pkg3.egg-info/top_level.txt

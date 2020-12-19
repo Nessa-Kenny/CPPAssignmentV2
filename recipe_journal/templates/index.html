@@ -32,10 +32,12 @@
           <ul>
             {% for item in contents %}
               <li>
-                <!--<a href="/download/{{ item.Key }}"> {{ item.Key }} </a> 
-                -->
-                <a href="/download/{{ item.Key }}"> {{ item.Key }}
+                <a href="/download/{{ item.Key }}"> {{ item.Key }} 
+                </a>
+                <!-- a href="/download/{{ item.Key }}"> {{ item.Key }}
+                If image attached diaplay image with the filename
                 <img src="https://nkrecipe1234.s3.amazonaws.com/{{ item.Key }} " width="150" height="150"></a>
+                -->
               </li>
             {% endfor %}
           </ul>

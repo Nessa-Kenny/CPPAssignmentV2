@@ -13,11 +13,11 @@
 
 <body style="background-color:powderblue;">
 <ul class="menu">
-            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <!--<li><a href="{{ url_for('login') }}">Login</a></li-->
             <li><a href="{{ url_for('index') }}">Index</a></li>
             <li><a href="{{ url_for('profile') }}">Profile</a></li>
             <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-            <li><a href="{{ url_for('search') }}">Search for Recipe</a></li>
+            <!--<li><a href="{{ url_for('search') }}">Search for Recipe</a></li>-->
 </ul>
 <h1 class="centerheader">Recipe Journal - Profile page <br><br>
 <!--<img src="images/profile_img.jpg" alt="ProfileImage" style="width:150px;height:150px;">-->
@@ -39,8 +39,12 @@
   <ul>
     {% for item in contents %}
     <li>
-      <a href="/download/{{ item.Key }}"> {{ item.Key }}
+      <a href="/download/{{ item.Key }}"> {{ item.Key }} 
+      </a>
+      <!-- a href="/download/{{ item.Key }}"> {{ item.Key }}
+      If image attached diaplay image with the filename
       <img src="https://nkrecipe1234.s3.amazonaws.com/{{ item.Key }} " width="150" height="150"></a>
+      -->
       </li>
       {% endfor %}
   </ul>

@@ -3,6 +3,10 @@ import os
 # importing datetime module 
 import datetime 
 
+#Calling created library - library "createf_example_pkg4" created on testpypi has been downloaded successfully and installed in the application directory
+#from cfile_properties_pkg.cfile_properties import CreateFile
+
+
 from flask import Flask, render_template, request, redirect, send_file, url_for
 #import upload,download data from s3_files.py file
 from s3_files import list_files, download_file, upload_file
@@ -89,15 +93,15 @@ def upload1():
 @app.route("/add_rec", methods=['POST'])
 def add_rec():
     title = request.form['r_title']
-    tit = title + '.html'
-    full_path = os.path.join('/recipe_journal/uploads',tit)
+    tit = title
+    #tit = title + '.html'
+    #full_path = os.path.join('/recipe_journal/uploads',tit)
     fh = open (tit,  "w")
     #fh = open (title.strftime("%d %B %Y")+".html","w")
     
     ing = request.form['r_ing']
     #fh.write('<html><head><link rel="stylesheet" href="/static/css/rep_styles.css"></head><body class="testbg"><div class="test"><h1 class="centerheader">')
     #fh.write(ing+'</h1>')
-    
     fh.write('Ingredients: \n\n')
     fh.write(ing + '\n\n\n')
     
@@ -118,7 +122,9 @@ def add_rec():
     #fh.write({{ item.Key }})
      
     fh.close()
-    #upload_file(title, BUCKET)
+    upload_file(title, BUCKET)
+    #cf = CreateFile()
+    #cf.createf(tit, ing, meth, notes, kw)
     upload_file(tit, BUCKET)
     return redirect("/index")    
         

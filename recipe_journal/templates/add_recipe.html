@@ -9,20 +9,20 @@
 <body class="testbg">
 <!body>
 <ul class="menu">
-            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <!--<li><a href="{{ url_for('login') }}">Login</a></li-->
             <li><a href="{{ url_for('index') }}">Index</a></li>
             <li><a href="{{ url_for('profile') }}">Profile</a></li>
             <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-            <li><a href="{{ url_for('search') }}">Search for Recipe</a></li>
+            <!--<li><a href="{{ url_for('search') }}">Search for Recipe</a></li>-->
 </ul>
-<h1 class="centerheader">Recipe Journal - Add Recipe <br><br>
-</h1>
+<div class="test"> 
+<h1 class="centerheader">Recipe Journal - Add Recipe </h1>
 <h2>Add New Recipe</h2>
-
+</div>
 <h3>File Upload - Please upload your recipe file here:</h3>
                   <form method="POST" action="/upload" enctype=multipart/form-data>
                     <input type=file name=file>
-                    <input type=submit value=Upload>
+                    <input class="confirmbutton" type=submit value=Upload>
                   </form>
 <br>
 <br>
@@ -55,7 +55,7 @@
   <label for="r_imgfile">Images / Videos:</label><br>
   <input type="file" id="r_imgfile" name="r_imgfile" value=""><br><br>
   
-  <input type="submit" value="Add Recipe">
+  <input class="confirmbutton" type="submit" value="Add Recipe">
 </form> 
 </body>
 </html>
