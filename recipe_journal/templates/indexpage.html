@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
+<!--<head>
  <title>Recipe Journal</title>
 <style>
 .centerheader{
@@ -9,9 +9,27 @@
 	color:blue;
 	}
 </style>
+</head>-->
+<head>
+<link rel="stylesheet" href="/static/css/rep_styles.css"> 
 </head>
 
-<body style="background-color:powderblue;">
+<body class="testbg">
+    
+<div class="test"> 
+<h1 class="centerheader">Index </h1>
+</div>
+    
+<div class="a">
+<ul class="a">
+            <!--<li><a href="{{ url_for('login') }}">Login</a></li-->
+            <li><a href="{{ url_for('index') }}">Index</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+            <!--<li><a href="{{ url_for('search') }}">Search for Recipe</a></li>-->
+</ul>
+</div>
+<!--    
 <meta charset="utf-8">
    <title>Index</title>
    <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}">
@@ -30,6 +48,6 @@
           </ul>
         </nav></strong>
       </div>
-    </header>
+    </header>-->
  </body>
 </html>

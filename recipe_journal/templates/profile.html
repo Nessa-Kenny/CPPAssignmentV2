@@ -2,29 +2,29 @@
 <html>
 
 <head>
-<style>
-.centerheader{
-	text-align:center;
-	font-size:300%
-	color:blue;
-	}
-</style>
+<link rel="stylesheet" href="/static/css/rep_styles.css"> 
 </head>
 
-<body style="background-color:powderblue;">
-<ul class="menu">
+<!--<body style="background-color:powderblue;">-->
+<body class="testbg">
+  
+<div class="test"> 
+<h1 class="centerheader">Recipe Journal - Profile page </h1>
+<h2>Profile</h2>
+</div>
+
+<div class="a">
+<ul class="a">
             <!--<li><a href="{{ url_for('login') }}">Login</a></li-->
             <li><a href="{{ url_for('index') }}">Index</a></li>
             <li><a href="{{ url_for('profile') }}">Profile</a></li>
             <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
             <!--<li><a href="{{ url_for('search') }}">Search for Recipe</a></li>-->
 </ul>
-<h1 class="centerheader">Recipe Journal - Profile page <br><br>
-<!--<img src="images/profile_img.jpg" alt="ProfileImage" style="width:150px;height:150px;">-->
-</h1>
-<h2>Profile</h2>
+</div>
+
 <p>User Details</p>
-<form action="/update_userdetails_page.py">
+<form class="botbor" action="/update_userdetails_page.py">
   <label for="uname">Username:</label><br>
   <input type="text" id="uname" name="uname" value=""><br>
   <label for="pwd">Password:</label><br>
@@ -32,8 +32,10 @@
   <input type="submit" value="Update User Details">
 </form> 
 
-<h2><a href="{{ url_for('add_recipe') }}">Add New Recipe</a></h2>
-
+<!--<h2><a href="{{ url_for('add_recipe') }}">Add New Recipe</a></h2>-->
+<div class="topbor">
+<a class="confirmbutton" href="{{ url_for('add_recipe') }}">Add New Recipe</a>
+</div>
 <h2><p><b>Previously added recipes - These are your uploaded files:</b></p></h2>
 <div class="content"></div>
   <ul>
@@ -51,6 +53,6 @@
   <h4><p>File Download - Click on one of the filenames above to download it.</p></h4>
 <br>
 <br>
-<h3><p><b>Search Recipes</b><p></h3>
+<h2><p><b>Search Recipes</b><p></h2>
 </body>
 </html>

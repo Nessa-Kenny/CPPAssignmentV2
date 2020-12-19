@@ -1,7 +1,8 @@
+#library package - createf_example_pkg7
 class CreateFile:
 
 	def createf(self, title, ing, meth, notes, kw):
-		tit = title + '.html'
+		tit = title + '.txt'
 		fh = open (tit,  "w")
     
 		fh.write('Ingredients: \n\n')
@@ -16,3 +17,8 @@ class CreateFile:
 		fh.close()
 		print("HERE")
     	#return upload_file(tit, BUCKET)
+
+    © 2020 GitHub, Inc.
+    Terms
+    Privacy
+    Security

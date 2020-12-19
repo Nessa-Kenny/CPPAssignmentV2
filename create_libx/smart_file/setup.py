@@ -4,9 +4,9 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="createf_example-pkg5",
+    name="createf_example-pkg7",
     # Replace with your own username above
-    version="0.0.0.5",
+    version="0.0.0.6",
     author="Nessa Kenny",
     author_email="author@example.com",
     description="A file create package",

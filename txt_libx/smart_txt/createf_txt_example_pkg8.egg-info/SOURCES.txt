@@ -1,0 +1,8 @@
+README.md
+setup.py
+cfile_txt_pkg/__init__.py
+cfile_txt_pkg/cfile_txt.py
+createf_txt_example_pkg8.egg-info/PKG-INFO
+createf_txt_example_pkg8.egg-info/SOURCES.txt
+createf_txt_example_pkg8.egg-info/dependency_links.txt
+createf_txt_example_pkg8.egg-info/top_level.txt

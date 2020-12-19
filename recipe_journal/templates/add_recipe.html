@@ -7,20 +7,25 @@
 
 <!--<body style="background-color:powderblue;">-->
 <body class="testbg">
-<!body>
-<ul class="menu">
+
+
+<div class="test"> 
+<h1 class="centerheader">Recipe Journal - Add Recipe </h1>
+<h2>Add New Recipe</h2>
+</div>
+
+<div class="a">
+<ul class="a">
             <!--<li><a href="{{ url_for('login') }}">Login</a></li-->
             <li><a href="{{ url_for('index') }}">Index</a></li>
             <li><a href="{{ url_for('profile') }}">Profile</a></li>
             <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
             <!--<li><a href="{{ url_for('search') }}">Search for Recipe</a></li>-->
 </ul>
-<div class="test"> 
-<h1 class="centerheader">Recipe Journal - Add Recipe </h1>
-<h2>Add New Recipe</h2>
 </div>
+
 <h3>File Upload - Please upload your recipe file here:</h3>
-                  <form method="POST" action="/upload" enctype=multipart/form-data>
+                  <form class="botbor" method="POST" action="/upload" enctype=multipart/form-data>
                     <input type=file name=file>
                     <input class="confirmbutton" type=submit value=Upload>
                   </form>
@@ -47,7 +52,9 @@
   </textarea><br><br>
   
   <label for="r_notes">Notes (Servings, Prep time, Cook time, Total time):</label><br>
-  <input type="text" size="25" id="r_notes" name="r_notes" value=""><br><br>
+ <!-- <input type="text" size="25" id="r_notes" name="r_notes" value=""><br><br>-->
+ <textarea id="r_notes" name="r_method" rows="10" cols="10">
+  </textarea><br><br>
   
   <label for="r_key">Keyword e.g Beef, Chicken:</label><br>
   <input type="text" size="25" id="r_key" name="r_key" value=""><br><br>

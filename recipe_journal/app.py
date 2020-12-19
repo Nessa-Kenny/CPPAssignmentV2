@@ -3,8 +3,8 @@ import os
 # importing datetime module 
 import datetime 
 
-#Calling created library - library "createf_example_pkg5" created on pypi has been downloaded successfully and installed in the application directory
-from cfile_properties_pkg.cfile_properties import CreateFile
+#Calling created library - library "createf_example_pkg7" created on pypi has been downloaded successfully and installed in the application directory
+from cfile_txt_pkg.cfile_txt import CreateFileTxt
 
 
 from flask import Flask, render_template, request, redirect, send_file, url_for
@@ -89,44 +89,45 @@ def upload1():
     return redirect("/index")
     
 #manual add recipe - read in from html form and create text file
+#library called to create file
 @app.route("/add_rec", methods=['POST'])
 def add_rec():
     title = request.form['r_title']
-    tit = title
+    tit = title + '.txt'
     #tit = title + '.html'
-    #full_path = os.path.join('/recipe_journal/uploads',tit)
-    fh = open (tit,  "w")
+    #fh = open (tit,  "w")
     #fh = open (title.strftime("%d %B %Y")+".html","w")
     
     ing = request.form['r_ing']
     #fh.write('<html><head><link rel="stylesheet" href="/static/css/rep_styles.css"></head><body class="testbg"><div class="test"><h1 class="centerheader">')
     #fh.write(ing+'</h1>')
-    fh.write('Ingredients: \n\n')
-    fh.write(ing + '\n\n\n')
+    #fh.write('Ingredients: \n\n')
+    #fh.write(ing + '\n\n\n')
     
     meth = request.form['r_method']
-    fh.write('Method: \n\n')
-    fh.write(meth + '\n\n\n')
+    #fh.write('Method: \n\n')
+    #fh.write(meth + '\n\n\n')
     
     notes = request.form['r_notes']
-    fh.write('Notes: \n\n')
-    fh.write(notes + '\n\n\n')
+    #fh.write('Notes: \n\n')
+    #fh.write(notes + '\n\n\n')
     
     kw = request.form['r_key']
-    fh.write('Keywords: \n\n')
-    fh.write(kw)
+    #fh.write('Keywords: \n\n')
+    #fh.write(kw)
     
     #img_file = request.form['r_imgfile']
     #fh.write('Image: \n\n')
     #fh.write({{ item.Key }})
      
-    fh.close()
-    upload_file(title, BUCKET)
+    #fh.close()
+    #upload_file(title, BUCKET)
     #call of library module
-    #cf = CreateFile()
-    #cf.createf(tit, ing, meth, notes, kw)
+    cf = CreateFileTxt()
+    cf.createf(title, ing, meth, notes, kw)
     upload_file(tit, BUCKET)
-    return redirect("/index")    
+    #return redirect("/index")  
+    return redirect("/profile")  
         
 if __name__ == '__main__':
      app.run(host='0.0.0.0', port=8080, debug=True)
