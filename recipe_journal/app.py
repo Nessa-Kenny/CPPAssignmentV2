@@ -3,8 +3,8 @@ import os
 # importing datetime module 
 import datetime 
 
-#Calling created library - library "createf_example_pkg4" created on testpypi has been downloaded successfully and installed in the application directory
-#from cfile_properties_pkg.cfile_properties import CreateFile
+#Calling created library - library "createf_example_pkg5" created on pypi has been downloaded successfully and installed in the application directory
+from cfile_properties_pkg.cfile_properties import CreateFile
 
 
 from flask import Flask, render_template, request, redirect, send_file, url_for
@@ -88,8 +88,7 @@ def upload1():
     upload_file("test.txt", BUCKET)
     return redirect("/index")
     
-#add recipe - read in form and create text file
-# %d - date, %B - month, %Y - Year 
+#manual add recipe - read in from html form and create text file
 @app.route("/add_rec", methods=['POST'])
 def add_rec():
     title = request.form['r_title']
@@ -123,6 +122,7 @@ def add_rec():
      
     fh.close()
     upload_file(title, BUCKET)
+    #call of library module
     #cf = CreateFile()
     #cf.createf(tit, ing, meth, notes, kw)
     upload_file(tit, BUCKET)
